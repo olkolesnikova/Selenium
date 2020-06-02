@@ -11,12 +11,13 @@ import java.util.concurrent.TimeUnit;
 public class TestBase {
 
     public WebDriver driver;
+    public WebDriverWait wait;
 
 
     @BeforeClass(alwaysRun = true)
     public void setUp() throws Exception {
         driver = new FirefoxDriver();
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        wait = new WebDriverWait(driver,10);
     }
 
     @AfterClass(alwaysRun = true)

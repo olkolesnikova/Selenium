@@ -1,10 +1,15 @@
 package ru.stqa;
 
 import org.openqa.selenium.By;
-import org.testng.Assert;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
+import java.util.List;
+
 public class AdminLogin extends TestBase {
+
+    int menuQuantity, submenuQuantity;
 
     @Test
     public void testAdminLogin() {
@@ -15,7 +20,6 @@ public class AdminLogin extends TestBase {
         driver.findElement(By.name("password")).clear();
         driver.findElement(By.name("password")).sendKeys("admin");
         driver.findElement(By.name("login")).click();
-
     }
 
 
