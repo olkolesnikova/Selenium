@@ -2,17 +2,15 @@ package ru.stqa;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
 import java.util.List;
 
-public class AdminLogin extends TestBase {
+public class SortList extends TestBase {
 
+       @Test
 
-
-    @Test
-    public void testAdminLogin() {
+    public void testSortCountries() {
 
         driver.get("http://localhost/litecart/admin/");
         driver.findElement(By.name("username")).clear();
@@ -20,7 +18,11 @@ public class AdminLogin extends TestBase {
         driver.findElement(By.name("password")).clear();
         driver.findElement(By.name("password")).sendKeys("admin");
         driver.findElement(By.name("login")).click();
+
+        driver.findElement(By.xpath("//li[3]/a/span[2]")).click();
+
+        List<WebElement> CountrieList = driver.findElements(By.cssSelector("tr.row td a"));
+
+        
     }
-
-
 }
