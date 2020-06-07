@@ -21,8 +21,8 @@ public class SortList extends TestBase {
 
         driver.findElement(By.xpath("//li[3]/a/span[2]")).click();
 
-        List<WebElement> CountrieList = driver.findElements(By.cssSelector("tr.row td a"));
 
-        
+
+
     }
 }

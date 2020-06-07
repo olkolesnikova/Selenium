@@ -22,5 +22,17 @@ public class AdminLogin extends TestBase {
         driver.findElement(By.name("login")).click();
     }
 
+    @Test
+
+    public void testColor() {
+
+        driver.get("http://localhost/litecart/");
+        WebElement productFirst = driver.findElement(By.cssSelector("div#box-campaigns div.name"));
+        String productNameFirst = productFirst.getText();
+        String campaignPrice = driver.findElement(By.cssSelector("s.regular-price")).getCssValue("text-decoration");
+        System.out.println(campaignPrice);
+
+    }
+
 
 }
