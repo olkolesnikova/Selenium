@@ -89,7 +89,7 @@ public class CheckProductProperties extends TestBase {
 
         for (i = 0; i < 2; i++) {
             Assert.assertEquals(regularPrice1[i], regularPrice2[i]);
-            Assert.assertEquals(campaignPrice1[i], campaignPrice2[i]); //жирность разная на двух страницах
+            Assert.assertEquals(campaignPrice1[i], campaignPrice2[i]); //жирность разная на двух страницах в Firefox, в Chrome совпадает
         }
     }
 }
