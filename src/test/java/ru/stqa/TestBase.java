@@ -17,8 +17,8 @@ public class TestBase {
 
     @BeforeClass(alwaysRun = true)
     public void setUp() throws Exception {
-        driver = new FirefoxDriver();
-        wait = new WebDriverWait(driver,10);
+        driver = new ChromeDriver();
+
     }
 
     @AfterClass(alwaysRun = true)

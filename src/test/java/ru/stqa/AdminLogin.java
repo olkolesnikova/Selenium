@@ -5,13 +5,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
+import java.util.Date;
 import java.util.List;
 
 public class AdminLogin extends TestBase {
 
 
 
-    @Test
+    @Test(enabled = false)
     public void testAdminLogin() {
 
         driver.get("http://localhost/litecart/admin/");
@@ -26,11 +27,9 @@ public class AdminLogin extends TestBase {
 
     public void testColor() {
 
-        driver.get("http://localhost/litecart/");
-        WebElement productFirst = driver.findElement(By.cssSelector("div#box-campaigns div.name"));
-        String productNameFirst = productFirst.getText();
-        String campaignPrice = driver.findElement(By.cssSelector("s.regular-price")).getCssValue("text-decoration");
-        System.out.println(campaignPrice);
+        Date date = new Date();
+        date.getTime();
+        System.out.println(date);
 
     }
 
