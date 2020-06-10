@@ -27,10 +27,9 @@ public class AdminLogin extends TestBase {
 
     public void testColor() {
 
-        Date date = new Date();
-        date.getTime();
-        System.out.println(date);
-
+        driver.get("http://localhost/litecart/en/");
+        String regularPriceColor = driver.findElement(By.cssSelector("s.regular-price")).getCssValue("color");
+        System.out.println(regularPriceColor);
     }
 
 
