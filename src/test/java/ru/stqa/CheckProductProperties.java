@@ -11,7 +11,12 @@ public class CheckProductProperties extends TestBase {
     WebElement productFirst, productSecond;
     String productNameFirst;
     String productNameSecond;
-    boolean regularPrice1Color, regularPrice2Color, regularPrice1TypeText, regularPrice2TypeText, campaignPrice1Color, campaignPrice2Color;
+    String regularPrice1Color;
+    String regularPrice2Color;
+    boolean regularPrice1TypeText;
+    boolean regularPrice2TypeText;
+    String campaignPrice1Color;
+    String campaignPrice2Color;
     String[] regularPrice1, campaignPrice1, regularPrice2, campaignPrice2;
     float size1, size2, size3, size4;
     int i;
@@ -35,12 +40,48 @@ public class CheckProductProperties extends TestBase {
 
         size1 = Float.parseFloat(regularPrice1[2].replaceAll("px",""));
 
-        regularPrice1Color = driver.findElement(By.cssSelector("s.regular-price")).getCssValue("color")
-                .contains("119, 119, 119");
+        //проверка что цвет серый на главной странице. для хрома
+        regularPrice1Color = driver.findElement(By.cssSelector("s.regular-price")).getCssValue("color");
+        String grey = regularPrice1Color.substring(5, 18);
+        String grey2 = grey.replaceAll(" ", "");
+        System.out.println(grey2);
+        String[] response = grey2.split(",",3);
+        Assert.assertEquals(response[0], response[1]);
+        Assert.assertEquals(response[1], response[2]);
 
-        campaignPrice1Color = driver.findElement(By.cssSelector("strong.campaign-price")).getCssValue("color")
-                .contains("204, 0, 0");
+        //проверка что цвет серый на главной странице для ff
 
+     /*   String regularPrice1Color = driver.findElement(By.cssSelector("s.regular-price")).getCssValue("color");
+        System.out.println(regularPrice1Color);
+        String grey = regularPrice1Color.substring(4, 17);
+        System.out.println(grey);
+        String grey2 = grey.replaceAll(" ", "");
+        System.out.println(grey2);
+        String[] response = grey2.split(",",3);
+        Assert.assertEquals(response[0], response[1]);
+        Assert.assertEquals(response[1], response[2]);
+    */
+
+        //проверка красного цвета на главной странице. для хрома
+        campaignPrice1Color = driver.findElement(By.cssSelector("strong.campaign-price")).getCssValue("color");
+        String red = campaignPrice1Color.substring(5, 14);
+        String red2 = red.replaceAll(" ", "");
+        System.out.println(red2);
+        String[] response_red = red2.split(",",3);
+        Assert.assertEquals(response_red[1], "0");
+        Assert.assertEquals(response_red[2], "0");
+
+        //проверка красного цвета на главной странице для ff
+     /*   String campaignPrice1Color = driver.findElement(By.cssSelector("strong.campaign-price")).getCssValue("color");
+        System.out.println(campaignPrice1Color);
+        String red = campaignPrice1Color.substring(4, 13);
+        System.out.println(red);
+        String red2 = red.replaceAll(" ", "");
+        System.out.println(red2);
+        String[] response_red = red2.split(",",3);
+        Assert.assertEquals(response_red[1], "0");
+        Assert.assertEquals(response_red[2], "0");
+    */
         regularPrice1TypeText = driver.findElement(By.cssSelector("s.regular-price")).getCssValue("text-decoration")
         .contains("line-throught");
 
@@ -70,11 +111,48 @@ public class CheckProductProperties extends TestBase {
 
         size3 = Float.parseFloat(regularPrice2[2].replaceAll("px",""));
 
-        regularPrice2Color = driver.findElement(By.cssSelector("s.regular-price")).getCssValue("color")
-                .contains("102, 102, 102");
+        //проверка что цвет серый на странице товара. для хрома
+        regularPrice2Color = driver.findElement(By.cssSelector("s.regular-price")).getCssValue("color");
+        String grey3 = regularPrice1Color.substring(5, 18);
+        String grey4 = grey3.replaceAll(" ", "");
+        System.out.println(grey4);
+        String[] response_grey = grey4.split(",",3);
+        Assert.assertEquals(response_grey[0], response_grey[1]);
+        Assert.assertEquals(response_grey[1], response_grey[2]);
 
-        campaignPrice2Color = driver.findElement(By.cssSelector("strong.campaign-price")).getCssValue("color")
-                .contains("204, 0, 0");
+        //проверка что цвет серый на странице товара в ff
+    /*    String regularPrice2Color = driver.findElement(By.cssSelector("s.regular-price")).getCssValue("color");
+        System.out.println(regularPrice2Color);
+        String grey = regularPrice1Color.substring(4, 17);
+        System.out.println(grey);
+        String grey2 = grey.replaceAll(" ", "");
+        System.out.println(grey2);
+        String[] response = grey2.split(",",3);
+        Assert.assertEquals(response[0], response[1]);
+        Assert.assertEquals(response[1], response[2]);
+     */
+
+        //проверка что цвет красный на странице товара. для хрома
+        campaignPrice2Color = driver.findElement(By.cssSelector("strong.campaign-price")).getCssValue("color");
+        String red3 = campaignPrice2Color.substring(5, 14);
+        String red4 = red3.replaceAll(" ", "");
+        System.out.println(red4);
+        String[] response_red2 = red4.split(",",3);
+        Assert.assertEquals(response_red2[1], "0");
+        Assert.assertEquals(response_red2[2], "0");
+
+        //проверка что цвет красный на странице товара для ff
+
+    /*    String campaignPrice1Color = driver.findElement(By.cssSelector("strong.campaign-price")).getCssValue("color");
+        System.out.println(campaignPrice1Color);
+        String red = campaignPrice1Color.substring(4, 13);
+        System.out.println(red);
+        String red2 = red.replaceAll(" ", "");
+        System.out.println(red2);
+        String[] response_red = red2.split(",",3);
+        Assert.assertEquals(response_red[1], "0");
+        Assert.assertEquals(response_red[2], "0");
+    */
 
         regularPrice2TypeText = driver.findElement(By.cssSelector("s.regular-price")).getCssValue("text-decoration")
         .contains("line-throught");

@@ -3,6 +3,7 @@ package ru.stqa;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.Date;
@@ -28,8 +29,9 @@ public class AdminLogin extends TestBase {
     public void testColor() {
 
         driver.get("http://localhost/litecart/en/");
-        String regularPriceColor = driver.findElement(By.cssSelector("s.regular-price")).getCssValue("color");
-        System.out.println(regularPriceColor);
+
+
+
     }
 
 

@@ -6,6 +6,9 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
+import java.awt.*;
+import java.util.List;
+
 public class ChooseCountry extends TestBase {
 
     @Test
@@ -18,11 +21,17 @@ public class ChooseCountry extends TestBase {
         //country.selectByVisibleText("United States");
         //wait = new WebDriverWait(driver, 10);
 
-        //driver.findElement(By.cssSelector("span.select2-selection.select2-selection--single"));
-        //driver.findElements(By.cssSelector("span.select2-selection__rendered [title=United States]"));
+        driver.findElement(By.cssSelector("span.select2-selection.select2-selection--single")).click();
+        wait = new WebDriverWait(driver, 10);
+        List<WebElement> countries = driver.findElements(By.cssSelector("li.select2-results__option #select2-country_code-qi-result-47p6-US"));
 
-        Select country = new Select(driver.findElement(By.cssSelector("select[name=country_code]")));
-        country.selectByVisibleText("United States");
+
+
+                driver.findElement(By.name("email")).click();
+
+
+        //Select country = new Select(driver.findElement(By.cssSelector("select[name=country_code]")));
+        //country.selectByVisibleText("United States");
 
 
 
