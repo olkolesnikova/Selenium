@@ -46,9 +46,9 @@ public class NewUserRegistration extends TestBase {
         driver.findElement(By.name("city")).clear();
         driver.findElement(By.name("city")).sendKeys("Ekb");
 
-        Select country = new Select(driver.findElement(By.cssSelector("select[name=country_code]")));
-        country.selectByVisibleText("United States");
+        driver.findElement(By.cssSelector("span.select2-selection.select2-selection--single")).click();
         wait = new WebDriverWait(driver, 10);
+        driver.findElement(By.cssSelector("[id*=US]")).click();
 
         driver.findElement(By.cssSelector("select[name=zone_code]")).click();
         driver.findElement(By.cssSelector("option:nth-child(2)")).click();

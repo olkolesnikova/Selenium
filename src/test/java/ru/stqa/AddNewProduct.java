@@ -4,6 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
+import java.io.File;
+
 public class AddNewProduct extends TestBase {
 
             @Test
@@ -32,10 +34,26 @@ public class AddNewProduct extends TestBase {
 
         driver.findElement(By.xpath("(//input[@name='product_groups[]'])[3]")).click();
 
+        driver.findElement(By.name("quantity")).clear();
         driver.findElement(By.name("quantity")).sendKeys("1");
 
-        driver.findElement(By.name("date_valid_from")).sendKeys("01.01.2020");
-        driver.findElement(By.name("date_valid_to")).sendKeys("01.12.2020");
+        driver.findElement(By.cssSelector("[type=file]")).sendKeys((new File("1.jpg").getAbsolutePath()));
+
+        driver.findElement(By.name("date_valid_from")).click();
+        driver.findElement(By.name("date_valid_from")).clear();
+        driver.findElement(By.name("date_valid_from")).sendKeys("2020-01-01");
+
+        driver.findElement(By.name("date_valid_to")).click();
+        driver.findElement(By.name("date_valid_to")).clear();
+        driver.findElement(By.name("date_valid_to")).sendKeys("2020-12-31");
+
+        //driver.findElement(By.name("date_valid_from")).click();
+        //driver.findElement(By.name("date_valid_from")).sendKeys("01.01.2020");
+
+        //driver.findElement(By.name("date_valid_to")).clear();
+        //driver.findElement(By.name("date_valid_to")).sendKeys("01.12.2020");
+
+
     }
 
 }
