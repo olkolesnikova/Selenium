@@ -23,7 +23,7 @@ public class ChooseCountry extends TestBase {
 
         driver.findElement(By.cssSelector("span.select2-selection.select2-selection--single")).click();
         wait = new WebDriverWait(driver, 10);
-        List<WebElement> countries = driver.findElements(By.cssSelector("li.select2-results__option #select2-country_code-qi-result-47p6-US"));
+        driver.findElement(By.cssSelector("#select2-country_code-ba-result-jyje-US"));
 
 
 
