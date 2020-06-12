@@ -50,10 +50,6 @@ public class NewUserRegistration extends TestBase {
         wait = new WebDriverWait(driver, 10);
         driver.findElement(By.cssSelector("[id*=US]")).click();
 
-        driver.findElement(By.cssSelector("select[name=zone_code]")).click();
-        driver.findElement(By.cssSelector("option:nth-child(2)")).click();
-
-
         driver.findElement(By.name("email")).click();
         driver.findElement(By.name("email")).clear();
         driver.findElement(By.name("email")).sendKeys(emailName + "@mail.com");

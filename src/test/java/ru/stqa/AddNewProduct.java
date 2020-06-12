@@ -47,11 +47,7 @@ public class AddNewProduct extends TestBase {
         driver.findElement(By.name("date_valid_to")).clear();
         driver.findElement(By.name("date_valid_to")).sendKeys("2020-12-31");
 
-        //driver.findElement(By.name("date_valid_from")).click();
-        //driver.findElement(By.name("date_valid_from")).sendKeys("01.01.2020");
 
-        //driver.findElement(By.name("date_valid_to")).clear();
-        //driver.findElement(By.name("date_valid_to")).sendKeys("01.12.2020");
 
 
     }
