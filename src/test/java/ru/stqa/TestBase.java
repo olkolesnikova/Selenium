@@ -17,7 +17,7 @@ public class TestBase {
 
     @BeforeClass(alwaysRun = true)
     public void setUp() throws Exception {
-        driver = new FirefoxDriver();
+        driver = new ChromeDriver();
 
     }
 
