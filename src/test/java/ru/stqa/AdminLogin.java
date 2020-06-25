@@ -13,7 +13,7 @@ public class AdminLogin extends TestBase {
 
 
 
-    @Test(enabled = false)
+    @Test
     public void testAdminLogin() {
 
         driver.get("http://localhost/litecart/admin/");
@@ -24,15 +24,7 @@ public class AdminLogin extends TestBase {
         driver.findElement(By.name("login")).click();
     }
 
-    @Test
-
-    public void testColor() {
-
-        driver.get("http://localhost/litecart/en/");
-
-
-
-    }
-
-
 }
+
+
+
