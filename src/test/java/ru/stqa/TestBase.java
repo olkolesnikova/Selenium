@@ -1,23 +1,23 @@
 package ru.stqa;
 
+import app.Application;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-
-import java.util.concurrent.TimeUnit;
 
 public class TestBase {
 
     public WebDriver driver;
     public WebDriverWait wait;
+    public Application app;
 
 
     @BeforeClass(alwaysRun = true)
     public void setUp() throws Exception {
         driver = new ChromeDriver();
+        app = new Application(driver);
 
     }
 

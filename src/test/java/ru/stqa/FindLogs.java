@@ -26,7 +26,7 @@ public class FindLogs extends TestBase {
 
         List<WebElement> productList = driver.findElements(By.cssSelector(".dataTable tr.row"));
         int productListSize = productList.size();
-        
+
         ArrayList<LogEntry> logs = new ArrayList<>();
 
         for (int i = 4; i < productListSize; i++) {
